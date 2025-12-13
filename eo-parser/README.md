@@ -53,16 +53,16 @@ sheets:
 asserts:
   - /object[not(errors)]
   - /object[count(o)=1]
-  - //o[@base='org.eolang.and' and @line='8']
+  - //o[@base='and' and @line='8']
   - //o[@base='foo']
   - //o[@base='ξ']
   - //o[@base='ρ']
   - //o[@base='Q']
 input: |
   +alias foo
-  +alias scanner org.eolang.tt.scanner
-  +alias stdin org.eolang.io.stdin
-  +alias stdout org.eolang.io.stdout
+  +alias scanner tt.scanner
+  +alias stdin io.stdin
+  +alias stdout io.stdout
   +foo Some other meta
 
   [args] > main
@@ -72,7 +72,7 @@ input: |
       $
       ^.i
       foo
-      Q.org.eolang.random
+      Q.random
 ```
 
 ### Sections
@@ -100,8 +100,8 @@ defined in this section:
 
 - `/object[not(errors)]`: This test checks that there are no errors in the program.
 - `/object[count(o)=1]`: This test checks that there is only one object in the program.
-- `//o[@base='org.eolang.and' and @line='8']`: This test checks that there is an object with the
-base `org.eolang.and` and the line number `8`.
+- `//o[@base='and' and @line='8']`: This test checks that there is an object with the
+base `and` and the line number `8`.
 - `//o[@base='foo']`: This test checks that there is an object with the base `foo`.
 - `//o[@base='ξ']`: This test checks that there is an object with the base `ξ`.
 - `//o[@base='ρ']`: This test checks that there is an object with the base `ρ`.

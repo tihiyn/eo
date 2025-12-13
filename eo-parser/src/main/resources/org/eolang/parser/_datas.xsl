@@ -5,8 +5,8 @@
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" id="_datas" version="2.0">
   <xsl:variable name="literal-objects" as="element()*">
-    <a>Q.org.eolang.bytes</a>
-    <a>Q.org.eolang.string</a>
-    <a>Q.org.eolang.number</a>
+    <a>Q.bytes</a>
+    <a>Q.string</a>
+    <a>Q.number</a>
   </xsl:variable>
 </xsl:stylesheet>

@@ -10,19 +10,19 @@ asserts:
   - /object[count(.//o[starts-with(@base, 'QQ')])=0]
   - /object[count(.//o[starts-with(@base, 'Φ')])=5]
   - /object/metas[count(.//meta[head/text()='alias']/*[text()[starts-with(., 'QQ')]])=0]
-  - /object/metas[count(.//meta[head/text()='alias']/*[text()[starts-with(., 'Φ.org.eolang.tt.sprintfQQ')]])=2]
-  - /object/metas/meta[head/text()='also' and tail/text()='Φ.org.eolang.tt.text']
-  - /object/metas/meta[head/text()='decorate' and part/text()='Φ.org.eolang.tt.text']
-  - /object/metas/meta[head/text()='alias' and tail/text()='Φ.org.eolang.runtime.sp']
+  - /object/metas[count(.//meta[head/text()='alias']/*[text()[starts-with(., 'Φ.tt.sprintfQQ')]])=2]
+  - /object/metas/meta[head/text()='also' and tail/text()='Φ.tt.text']
+  - /object/metas/meta[head/text()='decorate' and part/text()='Φ.tt.text']
+  - /object/metas/meta[head/text()='alias' and tail/text()='Φ.runtime.sp']
 input: |
-  +alias Q.org.eolang.runtime.sp
-  +alias QQ.tt.sprintfQQ
-  +also QQ.tt.text
-  +decorate string QQ.tt.text
+  +alias Q.runtime.sp
+  +alias Q.tt.sprintfQQ
+  +also Q.tt.text
+  +decorate string Q.tt.text
 
   # No comments.
   [] > app
-    QQ.io.stdout > @
+    Q.io.stdout > @
       "Hello, world!\n"
     sprintfQQ > a
       "Hello again"

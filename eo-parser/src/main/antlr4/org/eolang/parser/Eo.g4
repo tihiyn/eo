@@ -244,7 +244,7 @@ vapplicationHead
 
 // Compact arrays
 compactArray
-    : (XI | HOME | NAME) (DOT NAME)* SPACE STAR INT?
+    : (XI | NAME) (DOT NAME)* SPACE STAR INT?
     ;
 
 // Vertical application arguments
@@ -407,7 +407,6 @@ methodTail
 beginner
     : STAR
     | ROOT
-    | HOME
     | XI
     | data
     ;
@@ -492,8 +491,6 @@ META: PLUS NAME (SPACE ~[\t\r\n ]+)*
     ;
 
 ROOT: 'Q'
-    ;
-HOME: 'QQ'
     ;
 STAR: '*'
     ;

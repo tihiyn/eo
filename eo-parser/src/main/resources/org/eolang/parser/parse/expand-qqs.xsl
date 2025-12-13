@@ -10,25 +10,25 @@
   - child elements' text of all metas
   -->
   <xsl:output encoding="UTF-8" method="xml"/>
-  <xsl:template match="o[@base='Φ̇']">
-    <xsl:copy>
-      <xsl:attribute name="base">.eolang</xsl:attribute>
-      <xsl:copy-of select="@*[name()!='base']"/>
-      <xsl:element name="o">
-        <xsl:attribute name="base">.org</xsl:attribute>
-        <xsl:copy-of select="@*[name()!='base']"/>
-        <xsl:element name="o">
-          <xsl:attribute name="base">Φ</xsl:attribute>
-          <xsl:copy-of select="@*[name()!='base']"/>
-        </xsl:element>
-      </xsl:element>
-    </xsl:copy>
-  </xsl:template>
-  <xsl:template match="meta/*[text()[matches(., '^Φ̇\..*')]]">
-    <xsl:copy>
-      <xsl:value-of select="replace(./text(), '^Φ̇\.', 'Φ.org.eolang.')"/>
-    </xsl:copy>
-  </xsl:template>
+<!--  <xsl:template match="o[@base='Φ̇']">-->
+<!--    <xsl:copy>-->
+<!--      <xsl:attribute name="base">.eolang</xsl:attribute>-->
+<!--      <xsl:copy-of select="@*[name()!='base']"/>-->
+<!--      <xsl:element name="o">-->
+<!--        <xsl:attribute name="base">.org</xsl:attribute>-->
+<!--        <xsl:copy-of select="@*[name()!='base']"/>-->
+<!--        <xsl:element name="o">-->
+<!--          <xsl:attribute name="base">Φ</xsl:attribute>-->
+<!--          <xsl:copy-of select="@*[name()!='base']"/>-->
+<!--        </xsl:element>-->
+<!--      </xsl:element>-->
+<!--    </xsl:copy>-->
+<!--  </xsl:template>-->
+<!--  <xsl:template match="meta/*[text()[matches(., '^Φ̇\..*')]]">-->
+<!--    <xsl:copy>-->
+<!--      <xsl:value-of select="replace(./text(), '^Φ̇\.', 'Φ.org.eolang.')"/>-->
+<!--    </xsl:copy>-->
+<!--  </xsl:template>-->
   <xsl:template match="node()|@*">
     <xsl:copy>
       <xsl:apply-templates select="node()|@*"/>

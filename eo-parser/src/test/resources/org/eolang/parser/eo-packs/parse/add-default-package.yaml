@@ -12,23 +12,23 @@ sheets:
 asserts:
   - /object[not(errors)]
   - /object[count(o)=1]
-  - //o[@base='Φ.org.eolang.and']
+  - //o[@base='Φ.and']
   - //o[@base='Φ.foo']
   - //o[@base='ξ']
   - //o[@base='ρ']
   - //o[@base='Φ']
-  - /object/metas/meta[head='also' and tail='Φ.org.eolang.number' and part='Φ.org.eolang.number']
-  - /object/metas/meta[head='also' and tail='Φ.org.eolang.string' and part='Φ.org.eolang.string']
-  - /object/metas/meta[head='decorate' and tail='string QQ.number foo.bar' and part='Φ.org.eolang.string' and part='Φ.org.eolang.number' and part='Φ.org.eolang.foo.bar']
+  - /object/metas/meta[head='also' and tail='Φ.number' and part='Φ.number']
+  - /object/metas/meta[head='also' and tail='Φ.string' and part='Φ.string']
+  - /object/metas/meta[head='decorate' and tail='string Q.number foo.bar' and part='Φ.string' and part='Φ.number' and part='Φ.foo.bar']
 input: |
   +alias foo
-  +alias scanner org.eolang.tt.scanner
-  +alias stdin org.eolang.io.stdin
-  +alias stdout org.eolang.io.stdout
+  +alias scanner tt.scanner
+  +alias stdin io.stdin
+  +alias stdout io.stdout
   +foo Some other meta
-  +also org.eolang.number
+  +also number
   +also string
-  +decorate string QQ.number foo.bar
+  +decorate string Q.number foo.bar
 
   # No comments.
   [args] > main
@@ -39,4 +39,4 @@ input: |
       $
       ^.i
       foo
-      Q.org.eolang.random
+      Q.random

@@ -1,6 +1,6 @@
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang.tt
++package tt
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -45,7 +45,7 @@
   # ptn2.matches "hey"                  # compiles regex
   # ptn2.matches "hello"                # doesn't recompile regex
   # ```
-  # Returns `org.eolang.tt.regex.pattern` object.
+  # Returns `tt.regex.pattern` object.
   [] > @ ?
 
   # Regular expression compiled into pattern.
@@ -63,8 +63,8 @@
       (matched-from-index 1 0).matched > next
 
       # Get `position`-th block matched from `start` position.
-      # If string subsequence is found - returns `org.eolang.tt.regex.pattern.match.matched`
-      # object, returns `org.eolang.tt.regex.pattern.match.not-matched` otherwise.
+      # If string subsequence is found - returns `tt.regex.pattern.match.matched`
+      # object, returns `tt.regex.pattern.match.not-matched` otherwise.
       #
       # Attention! The object is for internal usage only, please
       # don't use the object programmatically outside of `regex` object.

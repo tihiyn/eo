@@ -1,6 +1,5 @@
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -31,7 +30,7 @@
         eq positive-infinity
         eq negative-infinity
 
-  # Convert this `org.eolang.number` to `org.eolang.i64` object and return it.
+  # Convert this `number` to `i64` object and return it.
   [] > as-i64 ?
 
   # Returns true if this number equals `x` when compared as byte sequences.
@@ -76,7 +75,7 @@
       eq value
     x > value!
 
-  # Returns `org.eolang.true` if `$` > `x`.
+  # Returns `true` if `$` > `x`.
   # Here `x` can be a `number` or any other object which
   # can be converted to 8 `bytes` via `as-bytes` object.
   [x] > gt ?
@@ -90,12 +89,12 @@
       eq value
     x > value!
 
-  # Multiplication of `$` and `x` as `org.eolang.number`.
+  # Multiplication of `$` and `x` as `number`.
   # Here `x` can be a `number` or any other object which
   # can be converted to 8 `bytes` via `as-bytes` object.
   [x] > times ?
 
-  # Sum of `$` and `x` as `org.eolang.number`.
+  # Sum of `$` and `x` as `number`.
   # Here `x` can be a `number` or any other object which
   # can be converted to 8 `bytes` via `as-bytes` object.
   [x] > plus ?
@@ -108,14 +107,14 @@
       (number value).neg
     x > value!
 
-  # Quotient of the division of `$` by `x` as `org.eolang.number`.
+  # Quotient of the division of `$` by `x` as `number`.
   # Here `x` can be a `number` or any other object which
   # can be converted to 8 `bytes` via `as-bytes` object.
   [x] > div ?
 
   # The object rounds down the original `number` to the nearest
   # whole `number` that is less than or equal to it
-  # and returns the result as `org.eolang.number`.
+  # and returns the result as `number`.
   [] > floor ?
 
   # Tests that less-than comparison returns true when first number is smaller.

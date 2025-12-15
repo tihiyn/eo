@@ -1,8 +1,8 @@
-+alias org.eolang.ms.e
-+alias org.eolang.ms.pi
++alias ms.e
++alias ms.pi
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang.ms
++package ms
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -46,20 +46,19 @@
       value.neg
     number num.as-bytes > value
 
-  # An operation that raises `^.num` (a number) to the power of `x` and returns the result as
-  # `org.eolang.number`.
+  # An operation that raises `^.num` (a number) to the power of `x` and returns the result as `number`.
   [x] > pow ?
 
-  # Returns the positive square root of a `num` as `org.eolang.number`.
+  # Returns the positive square root of a `num` as `number`.
   [] > sqrt ?
 
-  # Returns the natural logarithm `e` of a `num` as `org.eolang.number`.
+  # Returns the natural logarithm `e` of a `num` as `number`.
   [] > ln ?
 
-  # Calculates arc cosine of a `num` as `org.eolang.number`.
+  # Calculates arc cosine of a `num` as `number`.
   [] > acos ?
 
-  # Calculates arc sine of a `num` as `org.eolang.number`.
+  # Calculates arc sine of a `num` as `number`.
   # An operation that finds the angle whose sine is num.
   [] > asin ?
 

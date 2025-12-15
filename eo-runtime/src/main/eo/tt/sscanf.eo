@@ -1,8 +1,8 @@
-+alias org.eolang.ss.list
-+alias org.eolang.tt.sprintf
++alias ss.list
++alias tt.sprintf
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang.tt
++package tt
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -13,7 +13,7 @@
 # This object has two free attributes:
 # 1. `format` - is a formatter string (e.g. "Hello, %s!")
 # 2. `read` - is a string where data exists (e.g. "Hello, John!")
-# returns a `org.eolang.tuple` of formatted values (e.g. * "John").
+# returns a `tuple` of formatted values (e.g. * "John").
 # Supported formatters are:
 # - %d - parse as integer and convert to `number`
 # - %f - parse as float and convert to `number`

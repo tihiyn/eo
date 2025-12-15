@@ -1,7 +1,6 @@
-+alias org.eolang.tt.sprintf
++alias tt.sprintf
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -20,30 +19,30 @@
   as-i32.as-i64 > as-i64
   as-i64.as-number > as-number
 
-  # Convert this `org.eolang.i16` to `org.eolang.i32` and return it.
+  # Convert this `i16` to `i32` and return it.
   # The object is an atom because it's not possible to check what
   # bytes should be added from left so the number is valid.
   # The different bytes should be added if number is positive and negative.
   [] > as-i32 ?
 
-  # Returns `org.eolang.true` if `$` < `x`.
-  # Here `x` must be an `org.eolang.i16` object.
+  # Returns `true` if `$` < `x`.
+  # Here `x` must be an `i16` object.
   as-i32.lt x.as-i16.as-i32 > [x] > lt
 
-  # Returns `org.eolang.true` if `$` <= `x`.
-  # Here `x` must be an `org.eolang.i16` object.
+  # Returns `true` if `$` <= `x`.
+  # Here `x` must be an `i16` object.
   as-i32.lte x.as-i16.as-i32 > [x] > lte
 
-  # Returns `org.eolang.true` if `$` > `x`.
-  # Here `x` must be an `org.eolang.i16` object.
+  # Returns `true` if `$` > `x`.
+  # Here `x` must be an `i16` object.
   as-i32.gt x.as-i16.as-i32 > [x] > gt
 
-  # Returns `org.eolang.true` if `$` >= `x`.
-  # Here `x` must be an `org.eolang.i16` object.
+  # Returns `true` if `$` >= `x`.
+  # Here `x` must be an `i16` object.
   as-i32.gte x.as-i16.as-i32 > [x] > gte
 
   # Multiplication of `$` and `x`.
-  # Here `x` must be an `org.eolang.i16` object.
+  # Here `x` must be an `i16` object.
   [x] > times
     if. > @
       or.
@@ -58,7 +57,7 @@
     bts.slice 2 2 > right
 
   # Sum of `$` and `x`.
-  # Here `x` must be an `org.eolang.i16` object.
+  # Here `x` must be an `i16` object.
   [x] > plus
     if. > @
       or.
@@ -73,12 +72,12 @@
     bts.slice 2 2 > right
 
   # Subtraction between `$` and `x`.
-  # Here `x` must be an `org.eolang.i16` object.
+  # Here `x` must be an `i16` object.
   plus x.as-i16.neg > [x] > minus
 
   # Quotient of the division of `$` by `x`.
-  # Here `x` must be an `org.eolang.i16` object.
-  # An `org.eolang.error` is returned if `x` is equal to `0`.
+  # Here `x` must be an `i16` object.
+  # An `error` is returned if `x` is equal to `0`.
   [x] > div
     if. > @
       x-as-i16.eq zero

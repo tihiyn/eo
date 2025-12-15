@@ -1,7 +1,7 @@
-+alias org.eolang.sm.os
++alias sm.os
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang.sm
++package sm
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -29,7 +29,7 @@
 # WriteFile, etc.
 [name args] > win32
   # Makes an actual function call to operating system
-  # Returns `org.eolang.sm.win32.return` object.
+  # Returns `sm.win32.return` object.
   [] > @ ?
   -10 > std-input-handle
   -11 > std-output-handle

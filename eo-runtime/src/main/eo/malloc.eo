@@ -1,6 +1,5 @@
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -81,7 +80,7 @@
   # Allocates block in memory of given `size`. After allocation, `size` zero bytes are
   # written into memory.
   [size scope] > of
-    # Dataizes given `scope` and returns the result of the dataization as `org.eolang.bytes`.
+    # Dataizes given `scope` and returns the result of the dataization as `bytes`.
     [] > @ ?
 
     # Allocated block in memory that provides an API for writing and reading.
@@ -90,13 +89,13 @@
       # Just get all the data from the allocated block in memory.
       read 0 size > get
 
-      # Returns size of allocated block in memory as `org.eolang.number`.
+      # Returns size of allocated block in memory as `number`.
       [] > size ?
 
       # Resizes allocated block in memory and returns `true`.
       # Here `new-size` must be positive `number`.
       # The `error` returned if failed to resize block in memory.
-      # Returns `org.eolang.malloc.of.allocated` object.
+      # Returns `malloc.of.allocated` object.
       [new-size] > resized ?
 
       # Reads the data from block in memory with offset `source` and `length` and writes
@@ -108,11 +107,11 @@
           read source length
 
       # Read `length` bytes with `offset` from the allocated block in memory and return them
-      # as `org.eolang.bytes`.
+      # as `bytes`.
       [offset length] > read ?
 
       # Write `data` with `offset` to the allocated block in memory
-      # and return `org.eolang.true`.
+      # and return `true`.
       [offset data] > write ?
 
       # Put `object` into the allocated block in memory. The `object` is supposed to be dataizable.

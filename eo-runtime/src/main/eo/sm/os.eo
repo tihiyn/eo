@@ -1,7 +1,7 @@
-+alias org.eolang.tt.regex
++alias tt.regex
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang.sm
++package sm
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -14,7 +14,7 @@
 [] > os
   name > @
 
-  # Returns `org.eolang.true` if current OS belongs to `Windows` OS family.
+  # Returns `true` if current OS belongs to `Windows` OS family.
   [] > is-windows
     and. > @
       os-name.size.gt 6
@@ -23,7 +23,7 @@
   ((regex "/linux/i").matches name).as-bool > is-linux
   ((regex "/mac/i").matches name).as-bool > is-macos
 
-  # Returns the name of the current operation system as `org.eolang.string`.
+  # Returns the name of the current operation system as `string`.
   [] > name ?
 
   # Tests that the operating system belongs to the supported OS families (Windows, macOS, or Linux).

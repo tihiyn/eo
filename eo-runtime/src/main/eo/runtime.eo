@@ -1,6 +1,5 @@
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang
 +version 0.0.0
 +spdx SPDX-FileCopyrightText: Copyright (c) 2016-2025 Objectionary.com
 +spdx SPDX-License-Identifier: MIT
@@ -159,7 +158,7 @@
   # Tests that the runtime directly accesses objects from root namespace.
   [] +> tests-directly-accesses-objects-from-root
     eq. > @
-      Q.org.eolang.malloc.of
+      Q.malloc.of
         8
         [m]
           seq > @
@@ -181,14 +180,6 @@
               m.put
                 m.as-number.minus 2
       40
-
-  # Tests that the runtime handles standard root and root namespaces.
-  [] +> tests-standard-root-and-root
-    eq. > @
-      root
-      stand-root
-    QQ.sm.os > stand-root
-    Q.org.eolang.sm.os > root
 
   # Tests that the runtime extracts attributes from decoratees.
   [] +> tests-extract-attribute-from-decoratee

@@ -1,7 +1,7 @@
-+alias org.eolang.ms.pi
++alias ms.pi
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang.ms
++package ms
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -26,11 +26,11 @@
       times pi
       180.0
 
-  # Calculates sine of current angle and returns it as `org.eolang.number`.
+  # Calculates sine of current angle and returns it as `number`.
   # Please note, that `sin` is calculated from the angle in radians.
   [] > sin ?
 
-  # Calculates cosine of current angle and returns it as `org.eolang.number`.
+  # Calculates cosine of current angle and returns it as `number`.
   # Please note, that `cos` is calculated from the angle in radians.
   [] > cos ?
 

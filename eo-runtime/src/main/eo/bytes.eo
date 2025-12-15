@@ -1,7 +1,6 @@
-+alias org.eolang.tt.sprintf
++alias tt.sprintf
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -75,35 +74,35 @@
         "Can't convert non 2 length bytes to i16, bytes are %x"
         * as-bytes
 
-  # Returns `org.eolang.true` if current sequence of bytes equals another object.
+  # Returns `true` if current sequence of bytes equals another object.
   # Before the actual comparison the object `b` is dataized.
   [b] > eq ?
 
-  # Returns total amount of current bytes as `org.eolang.number`.
+  # Returns total amount of current bytes as `number`.
   [] > size ?
 
-  # Represents a sub-sequence of `org.eolang.bytes` inside the current one.
+  # Represents a sub-sequence of `bytes` inside the current one.
   [start len] > slice ?
 
-  # Calculates the bitwise AND operation and returns result as `org.eolang.bytes`.
+  # Calculates the bitwise AND operation and returns result as `bytes`.
   [b] > and ?
 
-  # Calculates the bitwise OR operation and returns result as `org.eolang.bytes`.
+  # Calculates the bitwise OR operation and returns result as `bytes`.
   [b] > or ?
 
-  # Calculates the bitwise XOR operation and returns result as `org.eolang.bytes`.
+  # Calculates the bitwise XOR operation and returns result as `bytes`.
   [b] > xor ?
 
-  # Calculates the bitwise NOT operation and returns result as `org.eolang.bytes`.
+  # Calculates the bitwise NOT operation and returns result as `bytes`.
   [] > not ?
 
   # Calculates the bitwise left shift.
   right x.neg > [x] > left
 
-  # Calculates the bitwise right shift and returns result as `org.eolang.bytes`.
+  # Calculates the bitwise right shift and returns result as `bytes`.
   [x] > right ?
 
-  # Concatenation of two byte sequences and returns result as `org.eolang.bytes`.
+  # Concatenation of two byte sequences and returns result as `bytes`.
   [b] > concat ?
 
   # Tests that a slice of bytes can be extracted from a larger byte sequence.

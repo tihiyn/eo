@@ -1,7 +1,6 @@
-+alias org.eolang.tt.sprintf
++alias tt.sprintf
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -18,9 +17,9 @@
   times -1.as-i64 > neg
   as-i32.as-i16 > as-i16
 
-  # Convert this `org.eolang.i64` to `org.eolang.i32`.
-  # The `org.eolang.error` is returned if the `org.eolang.i64` number is more than
-  # max `org.eolang.i32` value `2147483647`.
+  # Convert this `i64` to `i32`.
+  # The `error` is returned if the `i64` number is more than
+  # max `i32` value `2147483647`.
   [] > as-i32
     if. > @
       or.
@@ -33,43 +32,43 @@
           * as-number
     (as-bytes.slice 0 4).as-bytes > left
 
-  # Convert this `org.eolang.i64` to `org.eolang.number` object and return it.
+  # Convert this `i64` to `number` object and return it.
   [] > as-number ?
 
-  # Returns `org.eolang.true` if `$` < `x`.
-  # Here `x` must be an `org.eolang.i64` object.
+  # Returns `true` if `$` < `x`.
+  # Here `x` must be an `i64` object.
   [x] > lt
     0.as-i64.gt > @
       minus
         i64 value
     x > value!
 
-  # Returns `org.eolang.true` if `$` <= `x`.
-  # Here `x` must be an `org.eolang.i64` object.
+  # Returns `true` if `$` <= `x`.
+  # Here `x` must be an `i64` object.
   [x] > lte
     or. > @
       lt value
       ^.eq value
     x > value!
 
-  # Returns `org.eolang.true` if `$` > `x`.
-  # Here `x` must be an `org.eolang.i64` object.
+  # Returns `true` if `$` > `x`.
+  # Here `x` must be an `i64` object.
   [x] > gt ?
 
-  # Returns `org.eolang.true` if `$` >= `x`.
-  # Here `x` must be an `org.eolang.i64` object.
+  # Returns `true` if `$` >= `x`.
+  # Here `x` must be an `i64` object.
   [x] > gte
     or. > @
       gt value
       ^.eq value
     x > value!
 
-  # Multiplication of `$` and `x` as `org.eolang.i64`.
-  # Here `x` must be an `org.eolang.i64` object.
+  # Multiplication of `$` and `x` as `i64`.
+  # Here `x` must be an `i64` object.
   [x] > times ?
 
-  # Sum of `$` and `x` as `org.eolang.i64`.
-  # Here `x` must be an `org.eolang.i64` object.
+  # Sum of `$` and `x` as `i64`.
+  # Here `x` must be an `i64` object.
   [x] > plus ?
 
   # Subtraction between `$` and `x`.
@@ -78,9 +77,9 @@
     plus (i64 value).neg > @
     x > value!
 
-  # Quotient of the division of `$` by `x` as `org.eolang.i64`.
-  # Here `x` must be an `org.eolang.i64` object.
-  # An `org.eolang.error` is returned if `x` is equal to 0.
+  # Quotient of the division of `$` by `x` as `i64`.
+  # Here `x` must be an `i64` object.
+  # An `error` is returned if `x` is equal to 0.
   [x] > div ?
 
   # Tests that i64 number has correct byte representation.

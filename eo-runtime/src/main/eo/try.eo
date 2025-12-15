@@ -1,6 +1,5 @@
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -13,7 +12,7 @@
 # `catch` attribute is dataized instead, receiving the error as its parameter.
 # The `finally` attribute is always dataized after either `main` or `catch`
 # completes, regardless of success or failure. Returns the result of `main`
-# or `catch` dataization as `org.eolang.bytes`.
+# or `catch` dataization as `bytes`.
 #
 # Usage example:
 # ```

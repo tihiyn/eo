@@ -1,7 +1,6 @@
-+alias org.eolang.tt.sprintf
++alias tt.sprintf
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -18,15 +17,15 @@
   times -1.as-i64.as-i32 > neg
   as-i64.as-number > as-number
 
-  # Convert this `org.eolang.i32` to `org.eolang.i64` and return it.
+  # Convert this `i32` to `i64` and return it.
   # The object is an atom because it's not possible to check what
   # bytes should be added from left so the number is valid.
   # The different bytes should be added if number is positive and negative.
   [] > as-i64 ?
 
-  # Convert this `org.eolang.i32` to `org.eolang.i16`.
-  # The `org.eolang.error` is returned if the `org.eolang.i32` number is more than
-  # max `org.eolang.i16` value `32767`.
+  # Convert this `i32` to `i16`.
+  # The `error` is returned if the `i32` number is more than
+  # max `i16` value `32767`.
   [] > as-i16
     if. > @
       or.
@@ -39,24 +38,24 @@
           * as-i64.as-number
     (as-bytes.slice 0 2).as-bytes > left
 
-  # Returns `org.eolang.true` if `$` < `x`.
-  # Here `x` must be an `org.eolang.i32` object.
+  # Returns `true` if `$` < `x`.
+  # Here `x` must be an `i32` object.
   as-i64.lt x.as-i32.as-i64 > [x] > lt
 
-  # Returns `org.eolang.true` if `$` <= `x`.
-  # Here `x` must be an `org.eolang.i32` object.
+  # Returns `true` if `$` <= `x`.
+  # Here `x` must be an `i32` object.
   as-i64.lte x.as-i32.as-i64 > [x] > lte
 
-  # Returns `org.eolang.true` if `$` > `x`.
-  # Here `x` must be an `org.eolang.i32` object.
+  # Returns `true` if `$` > `x`.
+  # Here `x` must be an `i32` object.
   as-i64.gt x.as-i32.as-i64 > [x] > gt
 
-  # Returns `org.eolang.true` if `$` >= `x`.
-  # Here `x` must be an `org.eolang.i32` object.
+  # Returns `true` if `$` >= `x`.
+  # Here `x` must be an `i32` object.
   as-i64.gte x.as-i32.as-i64 > [x] > gte
 
   # Multiplication of `$` and `x`.
-  # Here `x` must be an `org.eolang.i32` object.
+  # Here `x` must be an `i32` object.
   [x] > times
     if. > @
       or.
@@ -71,7 +70,7 @@
     bts.slice 4 4 > right
 
   # Sum of `$` and `x`.
-  # Here `x` must be an `org.eolang.i32` object.
+  # Here `x` must be an `i32` object.
   [x] > plus
     if. > @
       or.
@@ -86,11 +85,11 @@
     bts.slice 4 4 > right
 
   # Subtraction between `$` and `x`.
-  # Here `x` must be an `org.eolang.i32` object.
+  # Here `x` must be an `i32` object.
   plus x.as-i32.neg > [x] > minus
 
   # Quotient of the division of `$` by `x`.
-  # Here `x` must be an `org.eolang.i32` object.
+  # Here `x` must be an `i32` object.
   # An `error` is returned if `x` is equal to 0.
   [x] > div
     if. > @

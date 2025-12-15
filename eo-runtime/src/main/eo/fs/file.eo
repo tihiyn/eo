@@ -1,10 +1,10 @@
-+alias org.eolang.fs.file
-+alias org.eolang.fs.path
-+alias org.eolang.fs.tmpdir
-+alias org.eolang.tt.sprintf
++alias fs.file
++alias fs.path
++alias fs.tmpdir
++alias tt.sprintf
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang.fs
++package fs
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -26,10 +26,10 @@
   # Converts the `file` to a `path`.
   (QQ.fs.path path).@ > as-path
 
-  # Returns `org.eolang.true` if current file is a directory, returns `org.eolang.false` otherwise.
+  # Returns `true` if current file is a directory, returns `false` otherwise.
   [] > is-directory ?
 
-  # Returns `org.eolang.true` if file with current `path` exists in filesystem.
+  # Returns `true` if file with current `path` exists in filesystem.
   [] > exists ?
 
   # If current file exists - returns the file.
@@ -43,7 +43,7 @@
         touch
         ^
 
-    # Creates new empty file and returns `org.eolang.true`.
+    # Creates new empty file and returns `true`.
     #
     # Note: This object is intended for internal use only. Please
     # don't use the object programmatically outside of `file` object.
@@ -59,13 +59,13 @@
         ^
       ^
 
-    # Deletes the file and returns `org.eolang.true`.
+    # Deletes the file and returns `true`.
     #
     # Note: This object is intended for internal use only. Please
     # don't use the object programmatically outside of `file` object.
     [] > delete ?
 
-  # Gets the file size in bytes and returns it as `org.eolang.number`.
+  # Gets the file size in bytes and returns it as `number`.
   [] > size ?
 
   # Moves the current file to `target`, making and returning a new `file` from it.
@@ -74,8 +74,8 @@
       move
 
     # Tries to move file from `^.path` to `target`
-    # and returns path of moved file as `org.eolang.string`.
-    # Returns `org.eolang.error` is failed to move the file.
+    # and returns path of moved file as `string`.
+    # Returns `error` is failed to move the file.
     #
     # Note: This object is intended for internal use only. Please
     # don't use the object programmatically outside of `file` object.
@@ -163,8 +163,8 @@
     #
     # Here file stream is open, then the stream is passed to `scope`,
     # then given `scope` is dataized and stream is closed.
-    # Returns `org.eolang.true` if there are no errors occurred while `scope`
-    # dataization, returns `org.eolang.error` otherwise.
+    # Returns `true` if there are no errors occurred while `scope`
+    # dataization, returns `error` otherwise.
     #
     # The object is stream-safe, which means that stream is closed anyway,
     # even if errors are occurred while `scope` dataization.
@@ -178,7 +178,7 @@
     [] > file-stream
       # Read `size` amount of bytes from file input stream.
       # Returns new instance of `input-block` with `buffer` read from file, or
-      # returns `org.eolang.error` if access mode does not allow reading operations.
+      # returns `error` if access mode does not allow reading operations.
       [size] > read
         (input-block --).read > @
           size
@@ -192,7 +192,7 @@
 
           # Read `size` amount of bytes from file input stream.
           # Returns new instance of `input-block` with `buffer` read from file, or
-          # returns `org.eolang.error` if provided access mode does not allow reading operations.
+          # returns `error` if provided access mode does not allow reading operations.
           [size] > read
             if. > @
               can-read.not
@@ -206,7 +206,7 @@
                 input-block read-bytes
             ^.^.read-bytes size > read-bytes!
 
-        # Bytes, as `org.eolang.bytes`, read from file input stream.
+        # Bytes, as `bytes`, read from file input stream.
         #
         # Note: This object is intended for internal use only. Please
         # don't use the object programmatically outside of `file` object.
@@ -244,7 +244,7 @@
                 written-bytes buffer
                 output-block
 
-        # Writes given `buffer` of bytes to file output stream and returns `org.eolang.true`.
+        # Writes given `buffer` of bytes to file output stream and returns `true`.
         #
         # Note: This object is intended for internal use only. Please
         # don't use the object programmatically outside of `file` object.

@@ -1,7 +1,7 @@
-+alias org.eolang.sm.os
++alias sm.os
 +architect yegor256@gmail.com
 +home https://github.com/objectionary/eo
-+package org.eolang.sm
++package sm
 +rt jvm org.eolang:eo-runtime:0.0.0
 +rt node eo2js-runtime:0.0.0
 +version 0.0.0
@@ -18,12 +18,12 @@
 +unlint redundant-object:45
 
 # Makes a Unix syscall by `name` with POSIX interface.
-# Here `args` is a `org.eolang.tuple` of arguments required for
+# Here `args` is a `tuple` of arguments required for
 # the particular syscall.
 # See the linux syscall [table](https://filippo.io/linux-syscall-table) for more info.
 [name args] > posix
   # Makes an actual syscall to operating system
-  # Returns `org.eolang.sm.posix.return` object.
+  # Returns `sm.posix.return` object.
   [] > @ ?
   0 > stdin-fileno
   1 > stdout-fileno
